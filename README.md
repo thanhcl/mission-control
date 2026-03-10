@@ -582,6 +582,36 @@ Mission Control is built by a growing community. Thank you to everyone who has c
       <sub>Security Audit</sub>
     </td>
   </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/YitingOU">
+        <img src="https://github.com/YitingOU.png?size=80" width="80" height="80" style="border-radius:50%" alt="YITING OU" /><br />
+        <sub><b>YITING OU</b></sub>
+      </a><br />
+      <sub>Cascade Delete Fix</sub>
+    </td>
+    <td align="center">
+      <a href="https://github.com/brandonros">
+        <img src="https://github.com/brandonros.png?size=80" width="80" height="80" style="border-radius:50%" alt="Brandon Ros" /><br />
+        <sub><b>Brandon Ros</b></sub>
+      </a><br />
+      <sub>Docker CI Workflow</sub>
+    </td>
+    <td align="center">
+      <a href="https://github.com/nano-lgtm">
+        <img src="https://github.com/nano-lgtm.png?size=80" width="80" height="80" style="border-radius:50%" alt="nano-lgtm" /><br />
+        <sub><b>nano-lgtm</b></sub>
+      </a><br />
+      <sub>Kanban UX Improvements</sub>
+    </td>
+    <td align="center">
+      <a href="https://github.com/cammybot1313-collab">
+        <img src="https://github.com/cammybot1313-collab.png?size=80" width="80" height="80" style="border-radius:50%" alt="cammybot1313-collab" /><br />
+        <sub><b>cammybot1313-collab</b></sub>
+      </a><br />
+      <sub>Docs Typo Fix</sub>
+    </td>
+  </tr>
 </table>
 
 ---
