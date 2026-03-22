@@ -136,18 +136,9 @@ function checkDb(): DbHealth {
     const ps = queryOne<{ page_size: number }>('PRAGMA page_size');
     const sizeBytes = (pc?.page_count ?? 0) * (ps?.page_size ?? 0);
 
-    // Writable test
-    let writable = false;
-    try {
-      queryOne<{ v: number }>('SELECT 1 as v');
-      writable = true;
-    } catch {
-      writable = false;
-    }
-
     return {
-      status: integrityOk && writable ? 'ok' : 'error',
-      writable,
+      status: integrityOk ? 'ok' : 'error',
+      writable: integrityOk,
       schema_version: schemaVersion,
       size_bytes: sizeBytes,
     };
