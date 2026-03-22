@@ -205,11 +205,18 @@ export async function storeIdeasFromPhaseData(
 ): Promise<void> {
   const product = queryOne<Product>('SELECT * FROM products WHERE id = ?', [productId]);
 
+  const VALID_CATEGORIES = new Set([
+    'feature', 'improvement', 'ux', 'performance', 'integration',
+    'infrastructure', 'content', 'growth', 'monetization', 'operations', 'security'
+  ]);
+
   let count = 0;
   for (const raw of ideasData) {
     const idea = raw as Record<string, unknown>;
     const id = uuidv4();
     const now = new Date().toISOString();
+    const rawCategory = String(idea.category || 'feature').toLowerCase().trim();
+    const category = VALID_CATEGORIES.has(rawCategory) ? rawCategory : 'feature';
 
     run(
       `INSERT INTO ideas (id, product_id, cycle_id, title, description, category, research_backing, impact_score, feasibility_score, complexity, estimated_effort_hours, competitive_analysis, target_user_segment, revenue_potential, technical_approach, risks, tags, source, source_research, created_at, updated_at)
@@ -218,7 +225,7 @@ export async function storeIdeasFromPhaseData(
         id, productId, researchCycleId || null,
         String(idea.title || 'Untitled'),
         String(idea.description || ''),
-        String(idea.category || 'feature'),
+        category,
         idea.research_backing ? String(idea.research_backing) : null,
         typeof idea.impact_score === 'number' ? idea.impact_score : null,
         typeof idea.feasibility_score === 'number' ? idea.feasibility_score : null,

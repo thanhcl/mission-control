@@ -28,7 +28,7 @@ I highly recommend getting Hetzner VPS to run this. <a href="https://hetzner.clo
   <a href="https://missioncontrol.ghray.com"><strong>🎮 Live Demo</strong></a> •
   <a href="#-quick-start">Quick Start</a> •
   <a href="#-docker">Docker</a> •
-  <a href="#-whats-new-in-v210">What's New</a> •
+  <a href="#-whats-new-in-v211">What's New</a> •
   <a href="#-features">Features</a> •
   <a href="#-how-it-works">How It Works</a> •
   <a href="#-configuration">Configuration</a> •
@@ -41,9 +41,12 @@ I highly recommend getting Hetzner VPS to run this. <a href="https://hetzner.clo
 
 ---
 
-## 🚀 What's New in v2.1.0
+## 🚀 What's New in v2.1.1
 
-### Server-Side Autopilot Pipeline
+### Bug Fix
+- **Ideation category validation** — LLM-generated idea categories are now validated against the schema before insert, preventing CHECK constraint failures that blocked idea storage.
+
+### v2.1.0 — Server-Side Autopilot Pipeline
 - **Run Now works in the background** — The research → ideation pipeline now runs entirely server-side. Click "Run Now", navigate away, close the tab — the pipeline keeps running. Multiple products run concurrently.
 - **LLM retry with backoff** — Timeout and network errors retry up to 3 times with exponential backoff (5s, 10s, 20s). Fixes ideation failures from flaky gateway connections.
 

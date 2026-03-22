@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.1.1] - 2026-03-21
+
+### Fixed
+- **Ideation CHECK constraint failure** — LLM occasionally returns idea categories not in the schema's allowed list (e.g. `"analytics"`, `"design"`). Categories are now validated against the allowed set before insert, falling back to `"feature"` for unrecognized values.
+
+---
+
 ## [2.1.0] - 2026-03-21
 
 ### Added
