@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.3.1] - 2026-03-22
+
+### Fixed
+- **Schema syntax error on fresh DB init** — Missing `);` between `user_task_reads` and `product_program_variants` table definitions caused `near "CREATE": syntax error` on startup. Artifact from PR #89 merge resolution.
+- **Pending migrations 023-027 not applied** — Migration 022 ID collision (old `error_reports` vs new `health_scores`) prevented new migrations from running. Fixed migration records and applied missing ALTER TABLE columns (`similarity_flag`, `auto_suppressed`, `variant_id`, `batch_review_threshold`, `health_weight_config`).
+
+---
+
 ## [2.3.0] - 2026-03-22
 
 ### Added

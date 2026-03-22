@@ -28,7 +28,7 @@ I highly recommend getting Hetzner VPS to run this. <a href="https://hetzner.clo
   <a href="https://missioncontrol.ghray.com"><strong>🎮 Live Demo</strong></a> •
   <a href="#-quick-start">Quick Start</a> •
   <a href="#-docker">Docker</a> •
-  <a href="#-whats-new-in-v230">What's New</a> •
+  <a href="#-whats-new-in-v231">What's New</a> •
   <a href="#-features">Features</a> •
   <a href="#-how-it-works">How It Works</a> •
   <a href="#-configuration">Configuration</a> •
@@ -41,7 +41,12 @@ I highly recommend getting Hetzner VPS to run this. <a href="https://hetzner.clo
 
 ---
 
-## 🚀 What's New in v2.3.0
+## 🚀 What's New in v2.3.1
+
+### Bug Fix
+- **Schema syntax error** — Fixed missing `);` in schema that caused startup errors on fresh databases. Applied pending migration columns for similarity detection, A/B testing, and batch review.
+
+### v2.3.0 Highlights
 
 ### Idea Similarity Detection
 - **Auto-deduplication** — New ideas are compared against existing ones. Ideas >90% similar to rejected ideas are auto-suppressed. Similar ideas get a warning badge. Full audit trail.
